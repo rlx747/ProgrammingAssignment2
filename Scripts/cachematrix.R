@@ -3,7 +3,8 @@
 ##
 ## Write a short comment describing this function
 
-## the function makeCacheMatrix makes an object(similar to a Java or Kotlin object)  which contains a variable(matrixInverse) to hold the inverse of the inputted matrix
+## the function makeCacheMatrix makes an object(similar to a Java or Kotlin object)  which contains a variable(matrixInverse) to hold the inverse
+##  of the inputted matrix
 ## it also holds a list of 4 functions to set and get the input matrix variable(which is x) and to set and get the inverse of that matrix(setInverse,getInverse)
 ## Use Case:
 ##          a <- makeCacheMatrix(matrix(1:4, 2,2)) 
@@ -23,14 +24,15 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         
-    ##  the <<- operator inside the setInverse function causes R to search for the existence of a variable called matrixInverse in the parent environments; since it finds
-    ##   a variable called matrixInverse in the outer function, R then assigns the value of inverse to that same variable
+    ##  the <<- operator inside the setInverse function causes R to search for the existence of a variable called matrixInverse in the parent environments;
+     ##   since it finds a variable called matrixInverse in the outer function, R then assigns the value of inverse to that same variable
     ##                                                          so that it is available through the makeCacheMatrix object. 
     ##  Note: this function DOES NOT calculate the inverse of a matrix! It simply makes an object that contains a variable to hold the inverse after it is set with
     ##  setInverse()
     ## Use cacheSolve function to generate the inverse
     
-    ##  Similarly, the <<- operator inside the set function assigns the input matrix y to the x defined in the arg(which is visible inside the entire scope of the makeCacheMatrix);
+    ##  Similarly, the <<- operator inside the set function assigns the input matrix y to the x defined in the arg(which is visible inside the entire scope
+    ##    of the makeCacheMatrix);
     ##  also when calling the set function the value of the outer variable matrixInverse is reassigned to NULL
     ##     (because otherwise you would have a new value for the input matrix and the old value for the inverse would still be present in matrixInverse)
     
